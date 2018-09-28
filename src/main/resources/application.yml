@@ -1,0 +1,20 @@
+micronaut:
+  server:
+    port: 8080
+  security:
+    enabled: true # <1>
+    endpoints:
+      logout:
+        enabled: true # <3>
+    token:
+      jwt:
+        enabled: true # <4>
+        bearer:
+          enabled: false # <5>
+        cookie:
+          enabled: true # <6>
+          loginFailureTargetUrl: /login/authFailed  # <7>
+        signatures:
+          secret:
+            generator: # <9>
+              secret: pleaseChangeThisSecretForANewOne # <9>
